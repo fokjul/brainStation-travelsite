@@ -1,0 +1,95 @@
+@use "../globals/" as g;
+@use "sass:math";
+
+.body {
+    display: grid;
+    grid-template-rows: auto 2fr auto;
+    height: 100vh;
+
+    .section {
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 100%;
+
+        &--country01 {
+            @extend .section;
+            @include g.section-layout (g.$util-color-white, url("/assets/Images/hawaii.jpg"));
+        }
+
+        &--country02 {
+            @extend .section;
+            @include g.section-layout (g.$util-color-white, url("/assets/Images/iceland.jpg"));
+        }
+
+        &--country03 {
+            @extend .section;
+            @include g.section-layout (g.$util-color-white, url("/assets/Images/greece.jpg"));
+        }
+        
+
+        &__container {
+            @include g.container-width();
+            display: flex;
+            flex-direction: column;
+            gap: g.$size-3xl;
+        }
+    
+        &__heading {
+            color: g.$util-color-white;
+            font-size: g.$font-2xl * 2;
+        }
+    
+        .card__container {
+            width: 90%;
+            margin-inline: auto;
+            display: flex;
+            justify-content: center;
+            gap: g.$size-3xl;
+        
+            .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: g.$size-m;
+                background-color: g.$util-color-white;
+                border-radius: math.div(5, 16) * 1rem;
+                width: math.div(250, 16) * 1rem;
+                min-height: math.div(350, 16) * 1rem;
+                padding: g.$size-m;
+                text-align: center;
+        
+                &__heading-wrapper {
+                    font-size: g.$font-s;
+                    color: g.$util-color-black;
+                    border-bottom: 2px solid g.$util-color-black;
+                    padding-bottom: g.$size-xxs;
+                    width: 100%;
+                }
+        
+                &__copy-wrapper {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: g.$size-s;
+                }
+        
+                &-copy {
+                    color: g.$util-color-black;
+                    background: g.$bg--dark;
+                    width: 100%;
+                    padding: g.$size-s;
+                    
+                }
+            }
+            
+        }
+    }
+
+    .footer {
+        align-self: flex-end;
+    }
+}
+
+
+

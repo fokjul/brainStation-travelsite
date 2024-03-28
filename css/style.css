@@ -3,9 +3,297 @@ html {
   box-sizing: border-box;
 }
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
-  font-family: "";
-  color: "";
   margin: 0;
   padding: 0;
+  color: #335576;
+  font-family: "Verdana", sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+/* Margines & Paddings */
+.header {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 75rem;
+  margin-inline: auto;
+  background-color: #FFFFFF;
+}
+
+.logo__link {
+  color: #335576;
+}
+
+.nav__list {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav__link, .nav__link--active {
+  color: rgb(0, 0, 0);
+  padding-bottom: 0.25rem;
+}
+.nav__link--active {
+  border-bottom: 0.25rem solid #DB7A4E;
+}
+
+.btn--primary {
+  background-color: #DB7A4E;
+  color: #FFFFFF;
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem 2.5rem;
+  max-width: 9.375rem;
+}
+
+.hero {
+  width: 100%;
+  background-color: #FEFAF5;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-image: none;
+}
+.hero__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 75rem;
+  margin-inline: auto;
+}
+.hero__description {
+  display: flex;
+  flex-direction: column;
+  width: 37.5rem;
+  gap: 2rem;
+}
+.hero__heading {
+  font-size: 2rem;
+  max-width: 20ch;
+}
+.hero__copy {
+  font-weight: 300;
+}
+.hero__img {
+  display: flex;
+  justify-content: flex-end;
+  width: 37.5rem;
+}
+.hero__img img {
+  width: 70%;
+}
+
+.recommend {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-image: none;
+}
+.recommend__container {
+  width: 90%;
+  max-width: 75rem;
+  margin-inline: auto;
+}
+.recommend__heading {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.recommend__card-container {
+  width: 90%;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+.recommend__card, .recommend__card--country03, .recommend__card--country02, .recommend__card--country01 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border-radius: 0.3125rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+  width: 17.5rem;
+  height: 25rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+  padding: 1.25rem;
+}
+.recommend__card-heading {
+  font-size: 1.25rem;
+}
+.recommend__card--country01 {
+  background-image: url("/assets/Images/hawaii.jpg");
+}
+.recommend__card--country02 {
+  background-image: url("/assets/Images/iceland.jpg");
+}
+.recommend__card--country03 {
+  background-image: url("/assets/Images/greece.jpg");
+}
+
+.footer {
+  width: 100%;
+  background-color: #FEFAF5;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-image: none;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 90%;
+  max-width: 75rem;
+  margin-inline: auto;
+}
+.footer__contact-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.footer__contact-email {
+  color: #335576;
+}
+.footer__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #DB7A4E;
+  margin: 1.5rem 0 1rem;
+}
+.footer__hours {
+  display: flex;
+  flex-direction: column;
+}
+.footer__hours-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+}
+.footer__hours-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer__social-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+.footer__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+.footer__headings {
+  font-size: 1.25rem;
+}
+
+.body {
+  display: grid;
+  grid-template-rows: auto 2fr auto;
+  height: 100vh;
+}
+.body .section, .body .section--country03, .body .section--country02, .body .section--country01 {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.body .section--country01 {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-image: url("/assets/Images/hawaii.jpg");
+}
+.body .section--country02 {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-image: url("/assets/Images/iceland.jpg");
+}
+.body .section--country03 {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-image: url("/assets/Images/greece.jpg");
+}
+.body .section__container {
+  width: 90%;
+  max-width: 75rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.body .section__heading {
+  color: #FFFFFF;
+  font-size: 4rem;
+}
+.body .section .card__container, .body .section--country01 .card__container, .body .section--country02 .card__container, .body .section--country03 .card__container {
+  width: 90%;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+.body .section .card__container .card, .body .section--country01 .card__container .card, .body .section--country02 .card__container .card, .body .section--country03 .card__container .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  background-color: #FFFFFF;
+  border-radius: 0.3125rem;
+  width: 15.625rem;
+  min-height: 21.875rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+.body .section .card__container .card__heading-wrapper, .body .section--country01 .card__container .card__heading-wrapper, .body .section--country02 .card__container .card__heading-wrapper, .body .section--country03 .card__container .card__heading-wrapper {
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
+  padding-bottom: 0.25rem;
+  width: 100%;
+}
+.body .section .card__container .card__copy-wrapper, .body .section--country01 .card__container .card__copy-wrapper, .body .section--country02 .card__container .card__copy-wrapper, .body .section--country03 .card__container .card__copy-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.body .section .card__container .card-copy, .body .section--country01 .card__container .card-copy, .body .section--country02 .card__container .card-copy, .body .section--country03 .card__container .card-copy {
+  color: rgb(0, 0, 0);
+  background: #FEFAF5;
+  width: 100%;
+  padding: 1rem;
+}
+.body .footer {
+  align-self: flex-end;
 }

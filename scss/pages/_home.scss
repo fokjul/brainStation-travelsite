@@ -1,0 +1,163 @@
+@use "../globals/" as g;
+@use "sass:math";
+
+.hero {
+    @include g.section-layout (g.$bg--dark);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include g.container-width();
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        width: 37.5rem;
+        gap: g.$size-xl;
+    }
+
+    &__heading {
+        font-size: g.$font-2xl;
+        max-width: 20ch; 
+    }
+
+    &__copy {
+        font-weight: g.$font-light;
+    }
+
+    &__img {
+        display: flex;
+        justify-content: flex-end;
+        width: 37.5rem;
+        
+        img {
+            width: 70%;
+        }
+    }
+}
+
+.recommend {
+    @include g.section-layout (g.$util-color-white);
+
+    &__container {
+        @include g.container-width();
+    }
+
+    &__heading {
+        font-size: g.$font-l;
+        margin-bottom: g.$size-l;
+    }
+
+    &__card-container {
+        width: 90%;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        gap: g.$size-3xl;
+    }
+
+    &__card {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        border-radius: math.div(5, 16) * 1rem;
+        border: 1px solid g.$util-color-black--20;
+        box-shadow: 0 g.$size-xxs g.$size-xxs g.$util-color-black--20;
+        width: math.div(280, 16) * 1rem;
+        height: math.div(400, 16) * 1rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: g.$util-color-white;
+        padding: g.$size-m;
+
+
+        &-heading {
+            font-size: g.$font-l;
+        }
+    }
+
+    &__card--country01 {
+        @extend .recommend__card;
+        background-image: url("/assets/Images/hawaii.jpg");
+    }
+
+    &__card--country02 {
+        @extend .recommend__card;
+        background-image: url("/assets/Images/iceland.jpg");
+        
+    }
+
+    &__card--country03 {
+        @extend .recommend__card;
+        background-image: url("/assets/Images/greece.jpg");
+    }
+}
+
+.footer {
+    @include g.section-layout (g.$bg--dark);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        @include g.container-width();
+    }
+
+    &__contact {
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-email {
+            color: g.$primary-color;
+        }
+    }
+
+    &__label {
+        font-size: g.$font-xxs;
+        text-transform: uppercase;
+        color: g.$accent-color;
+        margin: g.$size-l 0 g.$size-s;
+    }
+
+    &__hours {
+        display: flex;
+        flex-direction: column;
+
+        &-container {
+            display: flex;
+            flex-direction: row;
+            gap: g.$size-2xl;
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-wrapper {
+            display: flex;
+            gap: g.$size-s;
+        }
+    }
+
+    &__icon {
+        width: g.$size-l;
+        height: g.$size-l;
+        object-fit: contain;
+    }
+
+    &__headings {
+        font-size: g.$font-l;
+    }
+}

@@ -7,6 +7,86 @@
     <title>Home Page</title>
 </head>
 <body>
-    <h1>Hi</h1>
+    <header class="header">
+        <div class="logo">
+            <a href="/index.html" class="logo__link"><h3>Travel Site</h3></a>
+        </div>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="/index.html" class="nav__link--active">Home</a></li>
+                <li class="nav__item"><a href="./pages/hawaii.html" class="nav__link" >Hawaii</a></li>
+                <li class="nav__item"><a href="./pages/iceland.html" class="nav__link">Iceland</a></li>
+                <li class="nav__item"><a href="./pages/greece.html" class="nav__link">Greece</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero__container">
+                <div class="hero__description">
+                    <h1 class="hero__heading">Travelling Comes With Endless Discoveries</h1>
+                    <p class="hero__copy">Don’t let your dreams be just dreams. Experience the world by booking a vacation with us now.</p>
+                    <button class="btn--primary">Get Started</button>
+                </div>
+                <div class="hero__img">
+                    <img src="/assets/Images/hero.png"/>
+                </div>
+            </div>
+        </section>
+        <section class="recommend">
+            <div class="recommend__container">
+                <h2 class="recommend__heading">Recommendations</h2>
+                <div class="recommend__card-container">
+                    <div class="recommend__card--country01">
+                        <h2 class="recommend__card-heading">Hawaii</h2>
+                    </div>
+                    <div class="recommend__card--country02">
+                        <h2 class="recommend__card-heading">Iceland</h2>
+                    </div>
+                    <div class="recommend__card--country03">
+                        <h2 class="recommend__card-heading">Greece</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__contact">
+                <h2 class="footer__headings">Contact</h2>
+                <div class="footer__contact-wrapper">
+                    <p class="footer__label">email</p>
+                    <a href="mailto:info@travelsite.com" class="footer__contact-email">info@travelsite.com</a>
+                </div>
+            </div>
+            <div class="footer__hours">
+                <h2 class="footer__headings">Hours</h2>
+                <div class="footer__hours-container">
+                    <div class="footer__hours-wrapper">
+                        <p class="footer__label">manday - friday</p>
+                        <p class="footer__copy">9:00 am - 5:00 pm</p>
+                    </div>
+                    <div class="footer__hours-wrapper">
+                        <p class="footer__label">saturday</p>
+                        <p class="footer__copy">10:00 am - 4:00 pm</p>
+                    </div>
+                    <div class="footer__hours-wrapper">
+                        <p class="footer__label">sunday</p>
+                        <p class="footer__copy">Closed</p>
+                    </div>
+                </div>
+                    
+            </div>
+            <div class="footer__social">
+                <h2 class="footer__headings">Social</h2>
+                <div class="footer__social-wrapper">
+                    <img src="/assets/Icons/icon-instagram.png" class="footer__icon"/>
+                    <img src="/assets/Icons/icon-facebook.png" class="footer__icon"/>
+                    <img src="/assets/Icons/icon-twitter.png" class="footer__icon"/>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

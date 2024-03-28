@@ -1,0 +1,66 @@
+@use "colors";
+@use 'sass:math';
+
+/* Margines & Paddings */
+$size-3xl: 3rem; //48px
+$size-2xl: 2.5rem; //40px
+$size-xl: 2rem; //32px
+$size-l: 1.5rem; //24px
+$size-m: 1.25rem; //20px
+$size-s: 1rem; //16px
+$size-xs: 0.5rem; //8px
+$size-xxs: 0.25rem; //4px
+
+@mixin section-layout ($bg, $img: none) {
+    width: 100%;
+    background-color: $bg;
+    padding-top: $size-xl * 2;
+    padding-bottom: $size-xl * 2;
+    background-image: $img;
+}
+
+@mixin container-width () {
+    width: 90%;
+    max-width: 75rem;
+    margin-inline: auto;
+}
+
+.header {
+    height: $size-xl * 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include container-width();
+    background-color: colors.$util-color-white;
+}
+
+.logo__link {
+    color: colors.$primary-color;
+}
+
+.nav {
+    &__list {
+        list-style-type: none;
+        display: flex;
+        gap: $size-s;
+    }
+
+    &__link {
+        color: colors.$util-color-black;
+        padding-bottom: $size-xxs;
+    }
+
+    &__link--active {
+        @extend .nav__link;
+        border-bottom: $size-xxs solid colors.$accent-color
+    }
+}
+
+.btn--primary {
+    background-color: colors.$accent-color;
+    color: colors.$util-color-white;
+    border-radius: $size-s;
+    border: none;
+    padding: $size-xs $size-2xl;
+    max-width: math.div(150, 16) * 1rem  ; 
+}
