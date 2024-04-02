@@ -30,13 +30,16 @@ a, a:visited, a:active {
 /* Margines & Paddings */
 .header {
   height: 4rem;
+  width: 100%;
+  background-color: #FFFFFF;
+  position: fixed;
+}
+.header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: 75rem;
+  width: min(90%, 75rem);
   margin-inline: auto;
-  background-color: #FFFFFF;
 }
 
 .logo__link {
@@ -65,19 +68,89 @@ a, a:visited, a:active {
   max-width: 9.375rem;
 }
 
-.hero {
+.footer {
   width: 100%;
   background-color: #FEFAF5;
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-image: none;
 }
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: min(90%, 75rem);
+  margin-inline: auto;
+}
+@media (max-width: 56.25rem) {
+  .footer__container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+.footer__contact-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.footer__contact-email {
+  color: #335576;
+}
+.footer__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #DB7A4E;
+  margin-bottom: 1rem;
+}
+.footer__hours {
+  display: flex;
+  flex-direction: column;
+}
+.footer__hours-container {
+  display: flex;
+  gap: 2.5rem;
+}
+@media (max-width: 34.375rem) {
+  .footer__hours-container {
+    flex-wrap: wrap;
+  }
+}
+.footer__hours-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer__social-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+.footer__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+.footer__headings {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero {
+  width: 100%;
+  background-color: #FEFAF5;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-image: none;
+  padding-top: 8rem;
+}
 .hero__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: 75rem;
+  width: min(90%, 75rem);
   margin-inline: auto;
 }
 .hero__description {
@@ -85,6 +158,12 @@ a, a:visited, a:active {
   flex-direction: column;
   width: 37.5rem;
   gap: 2rem;
+}
+@media (max-width: 56.25rem) {
+  .hero__description {
+    align-items: center;
+    text-align: center;
+  }
 }
 .hero__heading {
   font-size: 2rem;
@@ -98,6 +177,11 @@ a, a:visited, a:active {
   justify-content: flex-end;
   width: 37.5rem;
 }
+@media (max-width: 56.25rem) {
+  .hero__img {
+    display: none;
+  }
+}
 .hero__img img {
   width: 70%;
 }
@@ -110,13 +194,17 @@ a, a:visited, a:active {
   background-image: none;
 }
 .recommend__container {
-  width: 90%;
-  max-width: 75rem;
+  width: min(90%, 75rem);
   margin-inline: auto;
 }
 .recommend__heading {
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
+}
+@media (max-width: 56.25rem) {
+  .recommend__heading {
+    text-align: center;
+  }
 }
 .recommend__card-container {
   width: 90%;
@@ -124,6 +212,12 @@ a, a:visited, a:active {
   display: flex;
   justify-content: center;
   gap: 3rem;
+}
+@media (max-width: 56.25rem) {
+  .recommend__card-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .recommend__card, .recommend__card--country03, .recommend__card--country02, .recommend__card--country01 {
   display: flex;
@@ -152,73 +246,16 @@ a, a:visited, a:active {
   background-image: url("/assets/Images/greece.jpg");
 }
 
-.footer {
-  width: 100%;
-  background-color: #FEFAF5;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  background-image: none;
-}
-.footer__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  width: 90%;
-  max-width: 75rem;
-  margin-inline: auto;
-}
-.footer__contact-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-.footer__contact-email {
-  color: #335576;
-}
-.footer__label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: #DB7A4E;
-  margin: 1.5rem 0 1rem;
-}
-.footer__hours {
-  display: flex;
-  flex-direction: column;
-}
-.footer__hours-container {
-  display: flex;
-  flex-direction: row;
-  gap: 2.5rem;
-}
-.footer__hours-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.footer__social {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.footer__social-wrapper {
-  display: flex;
-  gap: 1rem;
-}
-.footer__icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  object-fit: contain;
-}
-.footer__headings {
-  font-size: 1.25rem;
-}
-
 .body {
-  display: grid;
-  grid-template-rows: auto 2fr auto;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.body .main {
+  flex-grow: 1;
 }
 .body .section, .body .section--country03, .body .section--country02, .body .section--country01 {
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
 }
@@ -228,6 +265,7 @@ a, a:visited, a:active {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-image: url("/assets/Images/hawaii.jpg");
+  padding-top: 8rem;
 }
 .body .section--country02 {
   width: 100%;
@@ -235,6 +273,7 @@ a, a:visited, a:active {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-image: url("/assets/Images/iceland.jpg");
+  padding-top: 8rem;
 }
 .body .section--country03 {
   width: 100%;
@@ -242,10 +281,10 @@ a, a:visited, a:active {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-image: url("/assets/Images/greece.jpg");
+  padding-top: 8rem;
 }
 .body .section__container {
-  width: 90%;
-  max-width: 75rem;
+  width: min(90%, 75rem);
   margin-inline: auto;
   display: flex;
   flex-direction: column;
@@ -255,12 +294,23 @@ a, a:visited, a:active {
   color: #FFFFFF;
   font-size: 4rem;
 }
+@media (max-width: 56.25rem) {
+  .body .section__heading {
+    text-align: center;
+  }
+}
 .body .section .card__container, .body .section--country01 .card__container, .body .section--country02 .card__container, .body .section--country03 .card__container {
   width: 90%;
   margin-inline: auto;
   display: flex;
   justify-content: center;
   gap: 3rem;
+}
+@media (max-width: 56.25rem) {
+  .body .section .card__container, .body .section--country01 .card__container, .body .section--country02 .card__container, .body .section--country03 .card__container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .body .section .card__container .card, .body .section--country01 .card__container .card, .body .section--country02 .card__container .card, .body .section--country03 .card__container .card {
   display: flex;

@@ -1,5 +1,7 @@
 @use "colors";
+@use "fonts";
 @use 'sass:math';
+@use 'breakpoints' as b;
 
 /* Margines & Paddings */
 $size-3xl: 3rem; //48px
@@ -20,18 +22,27 @@ $size-xxs: 0.25rem; //4px
 }
 
 @mixin container-width () {
-    width: 90%;
-    max-width: 75rem;
+    width: min( 90%, 75rem);
     margin-inline: auto;
+}
+
+@mixin flex-col () {
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
     height: $size-xl * 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @include container-width();
+    width: 100%;
     background-color: colors.$util-color-white;
+    position: fixed;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include container-width();
+    }
 }
 
 .logo__link {
@@ -62,5 +73,78 @@ $size-xxs: 0.25rem; //4px
     border-radius: $size-s;
     border: none;
     padding: $size-xs $size-2xl;
-    max-width: math.div(150, 16) * 1rem  ; 
+    max-width: math.div(150, 16) * 1rem; 
+}
+
+.footer {
+    @include section-layout (colors.$bg--dark);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        @include container-width();
+
+        @include b.breakpoint(medium) {
+            flex-direction: column;
+            gap: $size-3xl;
+        }
+    }
+
+    &__contact {
+        &-wrapper {
+            @include flex-col();
+        }
+
+        &-email {
+            color: colors.$primary-color;
+        }
+    }
+
+    &__label {
+        font-size: fonts.$font-xxs;
+        text-transform: uppercase;
+        color: colors.$accent-color;
+        margin-bottom: $size-s;
+    }
+
+    &__hours {
+        @include flex-col();
+
+        &-container {
+            display: flex;
+            gap: $size-2xl;
+
+            @include b.breakpoint(small) {
+                flex-wrap: wrap;
+            }
+        }
+
+        &-wrapper {
+            @include flex-col();
+            align-items: flex-start;
+        }
+
+    }
+
+    &__social {
+        @include flex-col();
+        justify-content: space-between;
+
+        &-wrapper {
+            display: flex;
+            gap: $size-s;
+        }
+    }
+
+    &__icon {
+        width: $size-l;
+        height: $size-l;
+        object-fit: contain;
+    }
+
+    &__headings {
+        font-size: fonts.$font-l;
+        margin-bottom: $size-l;
+    }
 }

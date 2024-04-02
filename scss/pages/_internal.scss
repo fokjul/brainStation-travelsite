@@ -2,41 +2,49 @@
 @use "sass:math";
 
 .body {
-    display: grid;
-    grid-template-rows: auto 2fr auto;
     height: 100vh;
+    @include g.flex-col();
+
+    .main {
+        flex-grow: 1;
+    }
 
     .section {
-        background-size: 100%;
+        background-size: cover;
         background-repeat: no-repeat;
         height: 100%;
 
         &--country01 {
             @extend .section;
             @include g.section-layout (g.$util-color-white, url("/assets/Images/hawaii.jpg"));
+            padding-top: g.$size-xl * 4;
         }
 
         &--country02 {
             @extend .section;
             @include g.section-layout (g.$util-color-white, url("/assets/Images/iceland.jpg"));
+            padding-top: g.$size-xl * 4;
         }
 
         &--country03 {
             @extend .section;
             @include g.section-layout (g.$util-color-white, url("/assets/Images/greece.jpg"));
+            padding-top: g.$size-xl * 4;
         }
         
-
         &__container {
             @include g.container-width();
-            display: flex;
-            flex-direction: column;
+            @include g.flex-col();
             gap: g.$size-3xl;
         }
     
         &__heading {
             color: g.$util-color-white;
             font-size: g.$font-2xl * 2;
+
+            @include g.breakpoint(medium) {
+                text-align: center;
+            }
         }
     
         .card__container {
@@ -45,10 +53,14 @@
             display: flex;
             justify-content: center;
             gap: g.$size-3xl;
+
+            @include g.breakpoint(medium) {
+                flex-direction: column;
+                align-items: center;
+            }
         
             .card {
-                display: flex;
-                flex-direction: column;
+                @include g.flex-col();
                 justify-content: center;
                 align-items: center;
                 gap: g.$size-m;
@@ -69,8 +81,7 @@
         
                 &__copy-wrapper {
                     width: 100%;
-                    display: flex;
-                    flex-direction: column;
+                    @include g.flex-col();
                     gap: g.$size-s;
                 }
         
@@ -79,10 +90,8 @@
                     background: g.$bg--dark;
                     width: 100%;
                     padding: g.$size-s;
-                    
                 }
             }
-            
         }
     }
 

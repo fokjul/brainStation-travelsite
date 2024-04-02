@@ -3,6 +3,7 @@
 
 .hero {
     @include g.section-layout (g.$bg--dark);
+    padding-top: g.$size-xl * 4;
 
     &__container {
         display: flex;
@@ -16,6 +17,11 @@
         flex-direction: column;
         width: 37.5rem;
         gap: g.$size-xl;
+
+        @include g.breakpoint(medium){
+            align-items: center;
+            text-align: center;
+        }
     }
 
     &__heading {
@@ -31,6 +37,10 @@
         display: flex;
         justify-content: flex-end;
         width: 37.5rem;
+
+        @include g.breakpoint(medium) {
+            display: none;
+        } 
         
         img {
             width: 70%;
@@ -48,6 +58,10 @@
     &__heading {
         font-size: g.$font-l;
         margin-bottom: g.$size-l;
+
+        @include g.breakpoint(medium) {
+            text-align: center;
+        }
     }
 
     &__card-container {
@@ -56,6 +70,11 @@
         display: flex;
         justify-content: center;
         gap: g.$size-3xl;
+
+        @include g.breakpoint(medium) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     &__card {
@@ -86,7 +105,6 @@
     &__card--country02 {
         @extend .recommend__card;
         background-image: url("/assets/Images/iceland.jpg");
-        
     }
 
     &__card--country03 {
@@ -95,69 +113,3 @@
     }
 }
 
-.footer {
-    @include g.section-layout (g.$bg--dark);
-
-    &__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: stretch;
-        @include g.container-width();
-    }
-
-    &__contact {
-        &-wrapper {
-            display: flex;
-            flex-direction: column;
-        }
-
-        &-email {
-            color: g.$primary-color;
-        }
-    }
-
-    &__label {
-        font-size: g.$font-xxs;
-        text-transform: uppercase;
-        color: g.$accent-color;
-        margin: g.$size-l 0 g.$size-s;
-    }
-
-    &__hours {
-        display: flex;
-        flex-direction: column;
-
-        &-container {
-            display: flex;
-            flex-direction: row;
-            gap: g.$size-2xl;
-        }
-
-        &-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    }
-
-    &__social {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        &-wrapper {
-            display: flex;
-            gap: g.$size-s;
-        }
-    }
-
-    &__icon {
-        width: g.$size-l;
-        height: g.$size-l;
-        object-fit: contain;
-    }
-
-    &__headings {
-        font-size: g.$font-l;
-    }
-}

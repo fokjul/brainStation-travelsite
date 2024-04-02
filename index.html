@@ -6,19 +6,21 @@
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <title>Home Page</title>
 </head>
-<body>
+<body class="body">
     <header class="header">
-        <div class="logo">
-            <a href="/index.html" class="logo__link"><h3>Travel Site</h3></a>
+        <div class="header__container">
+            <div class="logo">
+                <a href="/index.html" class="logo__link"><h3>Travel Site</h3></a>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/index.html" class="nav__link--active">Home</a></li>
+                    <li class="nav__item"><a href="./pages/hawaii.html" class="nav__link" >Hawaii</a></li>
+                    <li class="nav__item"><a href="./pages/iceland.html" class="nav__link">Iceland</a></li>
+                    <li class="nav__item"><a href="./pages/greece.html" class="nav__link">Greece</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="nav">
-            <ul class="nav__list">
-                <li class="nav__item"><a href="/index.html" class="nav__link--active">Home</a></li>
-                <li class="nav__item"><a href="./pages/hawaii.html" class="nav__link" >Hawaii</a></li>
-                <li class="nav__item"><a href="./pages/iceland.html" class="nav__link">Iceland</a></li>
-                <li class="nav__item"><a href="./pages/greece.html" class="nav__link">Greece</a></li>
-            </ul>
-        </nav>
     </header>
     <main>
         <section class="hero">
@@ -37,15 +39,21 @@
             <div class="recommend__container">
                 <h2 class="recommend__heading">Recommendations</h2>
                 <div class="recommend__card-container">
-                    <div class="recommend__card--country01">
-                        <h2 class="recommend__card-heading">Hawaii</h2>
-                    </div>
-                    <div class="recommend__card--country02">
-                        <h2 class="recommend__card-heading">Iceland</h2>
-                    </div>
-                    <div class="recommend__card--country03">
-                        <h2 class="recommend__card-heading">Greece</h2>
-                    </div>
+                    <a href="./pages/hawaii.html">
+                        <div class="recommend__card--country01">
+                            <h2 class="recommend__card-heading">Hawaii</h2>
+                        </div>
+                    </a>
+                    <a href="./pages/iceland.html">
+                        <div class="recommend__card--country02">
+                            <h2 class="recommend__card-heading">Iceland</h2>
+                        </div>
+                    </a>
+                    <a href="./pages/greece.html">
+                        <div class="recommend__card--country03">
+                            <h2 class="recommend__card-heading">Greece</h2>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
