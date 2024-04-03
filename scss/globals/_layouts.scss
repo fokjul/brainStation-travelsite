@@ -1,7 +1,6 @@
 @use "colors";
 @use "fonts";
 @use 'sass:math';
-@use 'breakpoints' as b;
 
 /* Margines & Paddings */
 $size-3xl: 3rem; //48px
@@ -73,7 +72,7 @@ $size-xxs: 0.25rem; //4px
     border-radius: $size-s;
     border: none;
     padding: $size-xs $size-2xl;
-    max-width: math.div(150, 16) * 1rem; 
+    max-width: math.div(150, 16) * 1rem  ; 
 }
 
 .footer {
@@ -85,7 +84,7 @@ $size-xxs: 0.25rem; //4px
         align-items: stretch;
         @include container-width();
 
-        @include b.breakpoint(medium) {
+        @media (max-width: 900px){
             flex-direction: column;
             gap: $size-3xl;
         }
@@ -115,7 +114,7 @@ $size-xxs: 0.25rem; //4px
             display: flex;
             gap: $size-2xl;
 
-            @include b.breakpoint(small) {
+            @media (max-width: math.div(550, 16) * 1rem) {
                 flex-wrap: wrap;
             }
         }

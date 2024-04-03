@@ -82,7 +82,7 @@ a, a:visited, a:active {
   width: min(90%, 75rem);
   margin-inline: auto;
 }
-@media (max-width: 56.25rem) {
+@media (max-width: 900px) {
   .footer__container {
     flex-direction: column;
     gap: 3rem;

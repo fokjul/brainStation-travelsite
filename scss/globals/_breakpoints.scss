@@ -1,8 +1,9 @@
 @use "sass:map";
+@use "_functions.scss" as f;
 
 $breakpoints: (
-    "small": 34.375rem,
-    "medium": 56.25rem,
+    "small": f.to-rem(550px),
+    "medium": f.to-rem(900px)
 );
 
 @mixin breakpoint ($size) {

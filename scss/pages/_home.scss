@@ -15,7 +15,7 @@
     &__description {
         display: flex;
         flex-direction: column;
-        width: 37.5rem;
+        width: g.to-rem(600px);
         gap: g.$size-xl;
 
         @include g.breakpoint(medium){
@@ -36,7 +36,7 @@
     &__img {
         display: flex;
         justify-content: flex-end;
-        width: 37.5rem;
+        width: g.to-rem(600px);
 
         @include g.breakpoint(medium) {
             display: none;
@@ -81,16 +81,15 @@
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        border-radius: math.div(5, 16) * 1rem;
+        border-radius: g.to-rem(5px);
         border: 1px solid g.$util-color-black--20;
         box-shadow: 0 g.$size-xxs g.$size-xxs g.$util-color-black--20;
-        width: math.div(280, 16) * 1rem;
-        height: math.div(400, 16) * 1rem;
+        width: g.to-rem(280px); 
+        height: g.to-rem(400px);
         background-size: cover;
         background-repeat: no-repeat;
         color: g.$util-color-white;
         padding: g.$size-m;
-
 
         &-heading {
             font-size: g.$font-l;

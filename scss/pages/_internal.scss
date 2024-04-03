@@ -65,9 +65,9 @@
                 align-items: center;
                 gap: g.$size-m;
                 background-color: g.$util-color-white;
-                border-radius: math.div(5, 16) * 1rem;
-                width: math.div(250, 16) * 1rem;
-                min-height: math.div(350, 16) * 1rem;
+                border-radius: g.to-rem(5px);
+                width: g.to-rem(250px);
+                min-height: g.to-rem(350px);
                 padding: g.$size-m;
                 text-align: center;
         
