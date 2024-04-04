@@ -1,14 +1,16 @@
+@use "_functions.scss" as f;
+
 $font: "Verdana", sans-serif;
 
 $font-light: 300;
 $font-regular: 400;
 $font-bold: 700;
 
-$font-3xl: 3.75rem; //60px
-$font-2xl: 2rem; //32px
-$font-xl: 1.5rem; //24px
-$font-l: 1.25rem; //20px
-$font-m: 1.125rem; //18px
-$font-s: 1rem; //16px
-$font-xs: 0.875rem; //14px
-$font-xxs: 0.75rem; //12px
+$font-3xl: f.to-rem(60px);
+$font-2xl: f.to-rem(32px);
+$font-xl: f.to-rem(24px);
+$font-l: f.to-rem(20px);
+$font-m: f.to-rem(18px); 
+$font-s: f.to-rem(16px);
+$font-xs: f.to-rem(14px);
+$font-xxs: f.to-rem(12px);

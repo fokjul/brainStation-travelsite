@@ -1,16 +1,17 @@
 @use "colors";
 @use "fonts";
 @use 'sass:math';
+@use "functions" as f;
 
 /* Margines & Paddings */
-$size-3xl: 3rem; //48px
-$size-2xl: 2.5rem; //40px
-$size-xl: 2rem; //32px
-$size-l: 1.5rem; //24px
-$size-m: 1.25rem; //20px
-$size-s: 1rem; //16px
-$size-xs: 0.5rem; //8px
-$size-xxs: 0.25rem; //4px
+$size-3xl: f.to-rem(48px); 
+$size-2xl: f.to-rem(40px);
+$size-xl: f.to-rem(32px); 
+$size-l: f.to-rem(24px); 
+$size-m: f.to-rem(20px);
+$size-s: f.to-rem(16px); 
+$size-xs: f.to-rem(8px); 
+$size-xxs: f.to-rem(4px); 
 
 @mixin section-layout ($bg, $img: none) {
     width: 100%;
@@ -18,10 +19,11 @@ $size-xxs: 0.25rem; //4px
     padding-top: $size-xl * 2;
     padding-bottom: $size-xl * 2;
     background-image: $img;
+    background-position: left center;
 }
 
 @mixin container-width () {
-    width: min( 90%, 75rem);
+    width: min( 90%, f.to-rem(1200px));
     margin-inline: auto;
 }
 
@@ -72,7 +74,7 @@ $size-xxs: 0.25rem; //4px
     border-radius: $size-s;
     border: none;
     padding: $size-xs $size-2xl;
-    max-width: math.div(150, 16) * 1rem  ; 
+    max-width: f.to-rem(150px);  
 }
 
 .footer {
@@ -84,7 +86,7 @@ $size-xxs: 0.25rem; //4px
         align-items: stretch;
         @include container-width();
 
-        @media (max-width: 900px){
+        @media (max-width: f.to-rem(900px)){
             flex-direction: column;
             gap: $size-3xl;
         }
@@ -114,7 +116,7 @@ $size-xxs: 0.25rem; //4px
             display: flex;
             gap: $size-2xl;
 
-            @media (max-width: math.div(550, 16) * 1rem) {
+            @media (max-width: f.to-rem(550px)) {
                 flex-wrap: wrap;
             }
         }
@@ -123,7 +125,6 @@ $size-xxs: 0.25rem; //4px
             @include flex-col();
             align-items: flex-start;
         }
-
     }
 
     &__social {

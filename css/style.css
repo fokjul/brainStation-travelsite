@@ -74,6 +74,7 @@ a, a:visited, a:active {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-image: none;
+  background-position: left center;
 }
 .footer__container {
   display: flex;
@@ -82,7 +83,7 @@ a, a:visited, a:active {
   width: min(90%, 75rem);
   margin-inline: auto;
 }
-@media (max-width: 900px) {
+@media (max-width: 56.25rem) {
   .footer__container {
     flex-direction: column;
     gap: 3rem;
@@ -144,6 +145,7 @@ a, a:visited, a:active {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-image: none;
+  background-position: left center;
   padding-top: 8rem;
 }
 .hero__container {
@@ -192,6 +194,7 @@ a, a:visited, a:active {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-image: none;
+  background-position: left center;
 }
 .recommend__container {
   width: min(90%, 75rem);
@@ -223,7 +226,7 @@ a, a:visited, a:active {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  border-radius: 0.3125rem;
+  border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
   width: 17.5rem;
@@ -265,6 +268,7 @@ a, a:visited, a:active {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-image: url("/assets/Images/hawaii.jpg");
+  background-position: left center;
   padding-top: 8rem;
 }
 .body .section--country02 {
@@ -273,6 +277,7 @@ a, a:visited, a:active {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-image: url("/assets/Images/iceland.jpg");
+  background-position: left center;
   padding-top: 8rem;
 }
 .body .section--country03 {
@@ -281,6 +286,7 @@ a, a:visited, a:active {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-image: url("/assets/Images/greece.jpg");
+  background-position: left center;
   padding-top: 8rem;
 }
 .body .section__container {
@@ -319,7 +325,7 @@ a, a:visited, a:active {
   align-items: center;
   gap: 1.25rem;
   background-color: #FFFFFF;
-  border-radius: 0.3125rem;
+  border-radius: 5px;
   width: 15.625rem;
   min-height: 21.875rem;
   padding: 1.25rem;
